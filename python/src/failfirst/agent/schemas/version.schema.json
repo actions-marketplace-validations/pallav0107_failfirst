@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pallav0107/failfirst/schemas/version.schema.json",
+  "title": "failfirst version",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tool",
+    "version"
+  ],
+  "properties": {
+    "tool": {
+      "const": "failfirst"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

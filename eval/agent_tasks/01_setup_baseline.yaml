@@ -1,0 +1,13 @@
+id: setup-baseline
+prompt: |
+  The directory has calc.py with a buggy add() function. Do NOT fix it yet.
+  Set up failfirst for this repo: write a criteria file failfirst.yaml with one criterion
+  (id add-works) that checks add(2, 3) returns 5 by running python3, then record the baseline.
+files:
+  calc.py: "def add(a, b):\n    return a-b\n"
+checks:
+  - {type: file_exists, path: failfirst.yaml}
+  - {type: file_exists, path: .failfirst.lock.json}
+  - {type: file_contains, path: .failfirst.lock.json, text: '"status": "failed"'}
+  - {type: file_contains, path: calc.py, text: "a-b"}
+  - {type: command, cmd: "failfirst verify --json", expect_exit: 1}

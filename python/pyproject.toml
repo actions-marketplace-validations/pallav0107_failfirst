@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "failfirst"
+version = "0.1.0"
+description = "Acceptance criteria that must be proven to fail on the unfixed code before they may count as passing."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Pallav Pokhriyal", email = "pallav01@gmail.com" }]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+keywords = ["testing", "ci", "ai-agents", "acceptance-criteria", "verification"]
+dependencies = ["PyYAML>=6"]
+
+[project.optional-dependencies]
+test = ["pytest", "jsonschema>=4", "tiktoken"]
+
+[project.urls]
+Homepage = "https://github.com/pallav0107/failfirst"
+Source = "https://github.com/pallav0107/failfirst"
+Issues = "https://github.com/pallav0107/failfirst/issues"
+
+[project.scripts]
+failfirst = "failfirst.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+failfirst = ["py.typed", "agent/*", "agent/schemas/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

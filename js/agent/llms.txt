@@ -1,0 +1,12 @@
+# failfirst
+
+> Acceptance criteria that must be proven to fail on the unfixed code before they may count as passing. CLI, Python package and npm package; both implementations behave identically.
+
+failfirst records which checks fail BEFORE work starts (`baseline`) and, after the work, counts a criterion only if it failed at baseline, is byte-for-byte unchanged, and passes now (`verify`). Editing, deleting or adding criteria after baseline is detected. Every command accepts `--json` and exits with a documented code. Tool definitions for Anthropic, OpenAI and MCP are printed by `failfirst describe --json`; `failfirst mcp` serves them over stdio.
+
+- [AGENTS.md](AGENTS.md): exact commands, inputs, outputs, exit codes, examples, pitfalls
+- [README.md](README.md): overview and install
+- [spec/SPEC.md](spec/SPEC.md): language-neutral specification
+- [spec/tools.json](spec/tools.json): single source of the tool definitions and error codes
+- [schemas/](schemas/): JSON Schema for every --json output
+- [docs/AGENT_HARNESS.md](docs/AGENT_HARNESS.md): using failfirst in an agent loop

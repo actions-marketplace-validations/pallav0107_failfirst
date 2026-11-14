@@ -1,0 +1,43 @@
+{
+  "tool": "failfirst",
+  "tools": [
+    {
+      "name": "failfirst_baseline",
+      "description": "Run the acceptance criteria on the UNFIXED state and write the lockfile (.failfirst.lock.json). Call once, before any work. Returns a baseline report; exit_code 0 means every machine criterion failed as required. Refuses to overwrite an existing lockfile (FF_E_LOCK_EXISTS).",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "criteria": {"type": "string", "description": "Path to the criteria file (.json/.yaml). Default: failfirst.yaml, failfirst.yml, failfirst.json, criteria.yaml, criteria.yml or criteria.json in the working directory."},
+          "lock": {"type": "string", "description": "Lockfile path. Default: .failfirst.lock.json next to the criteria file."},
+          "dry_run": {"type": "boolean", "description": "Run the criteria and report, but write no lockfile and no report file."},
+          "force": {"type": "boolean", "description": "Overwrite an existing lockfile. Destroys the failure evidence; only a human owner should set this."}
+        },
+        "additionalProperties": false
+      },
+      "output_schema": "baseline-report.schema.json"
+    },
+    {
+      "name": "failfirst_verify",
+      "description": "Re-run the criteria AFTER the work and check each was proven: failed at baseline, unchanged since, and passes now. Returns a verify report; status is pass, fail or awaiting_review. Needs a lockfile from failfirst_baseline (FF_E_NO_LOCK otherwise).",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "criteria": {"type": "string", "description": "Path to the criteria file (.json/.yaml). Default: failfirst.yaml, failfirst.yml, failfirst.json, criteria.yaml, criteria.yml or criteria.json in the working directory."},
+          "lock": {"type": "string", "description": "Lockfile path. Default: .failfirst.lock.json next to the criteria file."}
+        },
+        "additionalProperties": false
+      },
+      "output_schema": "verify-report.schema.json"
+    }
+  ],
+  "errors": {
+    "FF_E_USAGE": {"exit": 2, "hint": "Run `failfirst --help`. Commands: baseline, verify, describe, mcp."},
+    "FF_E_NO_CRITERIA": {"exit": 2, "hint": "Create failfirst.yaml (see AGENTS.md) or pass the criteria file path as the first argument."},
+    "FF_E_BAD_CRITERIA": {"exit": 2, "hint": "Fix the criteria file: ids unique, every criterion needs a check (cmd, argv, path or url) or judgment: true, unknown fields are rejected. See spec/SPEC.md section 1."},
+    "FF_E_LOCK_EXISTS": {"exit": 2, "hint": "A baseline already exists; keep it. Re-baselining erases the failure evidence, so only a human owner should pass --force."},
+    "FF_E_NO_LOCK": {"exit": 2, "hint": "Run `failfirst baseline` on the unfixed state before the work, then verify."},
+    "FF_E_BAD_LOCK": {"exit": 2, "hint": "The lockfile is corrupt or from another version. Restore it from version control; do not re-baseline after the fix."},
+    "FF_E_IO": {"exit": 2, "hint": "A file could not be read or written (permissions, missing directory). Check the --lock / --report path and the working directory."},
+    "FF_E_INTERNAL": {"exit": 70, "hint": "Unexpected failure in failfirst itself. Re-run with the same arguments and report the message."}
+  }
+}

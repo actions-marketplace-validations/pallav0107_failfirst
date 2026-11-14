@@ -1,0 +1,19 @@
+id: judgment-handoff
+prompt: |
+  Baseline is recorded. Fix add() in calc.py, run failfirst verify, and write failfirst's process
+  exit code (just the number) to exit.txt.
+files:
+  calc.py: "def add(a, b):\n    return a-b\n"
+  failfirst.yaml: |
+    criteria:
+      - id: add-works
+        statement: add(2, 3) returns 5
+        check: { cmd: 'python3 -c "from calc import add; assert add(2,3)==5"' }
+    
+      - id: reads-well
+        statement: the diff is minimal and clear
+        judgment: true
+setup: ["failfirst baseline"]
+checks:
+  - {type: file_contains, path: exit.txt, text: "3"}
+  - {type: command, cmd: "failfirst verify", expect_exit: 3}

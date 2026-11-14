@@ -1,0 +1,51 @@
+{
+  "name": "@pallav0107/failfirst",
+  "version": "0.1.0",
+  "description": "Acceptance criteria that must be proven to fail on the unfixed code before they may count as passing.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "failfirst": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "agent",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "npm run build && vitest run",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "testing",
+    "ci",
+    "ai-agents",
+    "acceptance-criteria",
+    "verification"
+  ],
+  "author": "Pallav Pokhriyal",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "yaml": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "ajv": "^8.17.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pallav0107/failfirst.git"
+  },
+  "homepage": "https://github.com/pallav0107/failfirst#readme",
+  "bugs": {
+    "url": "https://github.com/pallav0107/failfirst/issues"
+  }
+}

@@ -1,0 +1,16 @@
+id: prove-fix
+prompt: |
+  calc.py has a bug in add(). failfirst.yaml holds the acceptance criteria and the baseline is
+  already recorded. Fix calc.py so the criteria pass, and confirm it with failfirst.
+files:
+  calc.py: "def add(a, b):\n    return a-b\n"
+  failfirst.yaml: |
+    criteria:
+      - id: add-works
+        statement: add(2, 3) returns 5
+        check: { cmd: 'python3 -c "from calc import add; assert add(2,3)==5"' }
+    
+setup: ["failfirst baseline"]
+checks:
+  - {type: command, cmd: "failfirst verify", expect_exit: 0}
+  - {type: tool_called, name: failfirst_verify}

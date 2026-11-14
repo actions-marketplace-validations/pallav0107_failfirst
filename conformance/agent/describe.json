@@ -1,0 +1,151 @@
+{
+  "description": "Expected output of `failfirst describe --json`; every implementation must match it exactly.",
+  "expected": {
+    "tool": "failfirst",
+    "version": "0.1.0",
+    "anthropic": [
+      {
+        "name": "failfirst_baseline",
+        "description": "Run the acceptance criteria on the UNFIXED state and write the lockfile (.failfirst.lock.json). Call once, before any work. Returns a baseline report; exit_code 0 means every machine criterion failed as required. Refuses to overwrite an existing lockfile (FF_E_LOCK_EXISTS).",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "criteria": {
+              "type": "string",
+              "description": "Path to the criteria file (.json/.yaml). Default: failfirst.yaml, failfirst.yml, failfirst.json, criteria.yaml, criteria.yml or criteria.json in the working directory."
+            },
+            "lock": {
+              "type": "string",
+              "description": "Lockfile path. Default: .failfirst.lock.json next to the criteria file."
+            },
+            "dry_run": {
+              "type": "boolean",
+              "description": "Run the criteria and report, but write no lockfile and no report file."
+            },
+            "force": {
+              "type": "boolean",
+              "description": "Overwrite an existing lockfile. Destroys the failure evidence; only a human owner should set this."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      {
+        "name": "failfirst_verify",
+        "description": "Re-run the criteria AFTER the work and check each was proven: failed at baseline, unchanged since, and passes now. Returns a verify report; status is pass, fail or awaiting_review. Needs a lockfile from failfirst_baseline (FF_E_NO_LOCK otherwise).",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "criteria": {
+              "type": "string",
+              "description": "Path to the criteria file (.json/.yaml). Default: failfirst.yaml, failfirst.yml, failfirst.json, criteria.yaml, criteria.yml or criteria.json in the working directory."
+            },
+            "lock": {
+              "type": "string",
+              "description": "Lockfile path. Default: .failfirst.lock.json next to the criteria file."
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    ],
+    "openai": [
+      {
+        "type": "function",
+        "function": {
+          "name": "failfirst_baseline",
+          "description": "Run the acceptance criteria on the UNFIXED state and write the lockfile (.failfirst.lock.json). Call once, before any work. Returns a baseline report; exit_code 0 means every machine criterion failed as required. Refuses to overwrite an existing lockfile (FF_E_LOCK_EXISTS).",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "criteria": {
+                "type": "string",
+                "description": "Path to the criteria file (.json/.yaml). Default: failfirst.yaml, failfirst.yml, failfirst.json, criteria.yaml, criteria.yml or criteria.json in the working directory."
+              },
+              "lock": {
+                "type": "string",
+                "description": "Lockfile path. Default: .failfirst.lock.json next to the criteria file."
+              },
+              "dry_run": {
+                "type": "boolean",
+                "description": "Run the criteria and report, but write no lockfile and no report file."
+              },
+              "force": {
+                "type": "boolean",
+                "description": "Overwrite an existing lockfile. Destroys the failure evidence; only a human owner should set this."
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "failfirst_verify",
+          "description": "Re-run the criteria AFTER the work and check each was proven: failed at baseline, unchanged since, and passes now. Returns a verify report; status is pass, fail or awaiting_review. Needs a lockfile from failfirst_baseline (FF_E_NO_LOCK otherwise).",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "criteria": {
+                "type": "string",
+                "description": "Path to the criteria file (.json/.yaml). Default: failfirst.yaml, failfirst.yml, failfirst.json, criteria.yaml, criteria.yml or criteria.json in the working directory."
+              },
+              "lock": {
+                "type": "string",
+                "description": "Lockfile path. Default: .failfirst.lock.json next to the criteria file."
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    ],
+    "mcp": [
+      {
+        "name": "failfirst_baseline",
+        "description": "Run the acceptance criteria on the UNFIXED state and write the lockfile (.failfirst.lock.json). Call once, before any work. Returns a baseline report; exit_code 0 means every machine criterion failed as required. Refuses to overwrite an existing lockfile (FF_E_LOCK_EXISTS).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "criteria": {
+              "type": "string",
+              "description": "Path to the criteria file (.json/.yaml). Default: failfirst.yaml, failfirst.yml, failfirst.json, criteria.yaml, criteria.yml or criteria.json in the working directory."
+            },
+            "lock": {
+              "type": "string",
+              "description": "Lockfile path. Default: .failfirst.lock.json next to the criteria file."
+            },
+            "dry_run": {
+              "type": "boolean",
+              "description": "Run the criteria and report, but write no lockfile and no report file."
+            },
+            "force": {
+              "type": "boolean",
+              "description": "Overwrite an existing lockfile. Destroys the failure evidence; only a human owner should set this."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      {
+        "name": "failfirst_verify",
+        "description": "Re-run the criteria AFTER the work and check each was proven: failed at baseline, unchanged since, and passes now. Returns a verify report; status is pass, fail or awaiting_review. Needs a lockfile from failfirst_baseline (FF_E_NO_LOCK otherwise).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "criteria": {
+              "type": "string",
+              "description": "Path to the criteria file (.json/.yaml). Default: failfirst.yaml, failfirst.yml, failfirst.json, criteria.yaml, criteria.yml or criteria.json in the working directory."
+            },
+            "lock": {
+              "type": "string",
+              "description": "Lockfile path. Default: .failfirst.lock.json next to the criteria file."
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    ]
+  }
+}

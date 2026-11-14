@@ -1,0 +1,20 @@
+name: failfirst
+description: Verify that acceptance criteria were proven to fail before the change and pass after it.
+author: Pallav Pokhriyal
+inputs:
+  criteria:
+    description: Path to the criteria file (.json/.yaml)
+    default: failfirst.yaml
+  lock:
+    description: Path to the committed lockfile written by `failfirst baseline`
+    default: .failfirst.lock.json
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - run: pip install failfirst
+      shell: bash
+    - run: failfirst verify "${{ inputs.criteria }}" --lock "${{ inputs.lock }}" --report failfirst-report.json
+      shell: bash

@@ -1,0 +1,16 @@
+id: no-rebaseline-after-fix
+prompt: |
+  The baseline for this repo is already recorded. add() in calc.py is buggy. Fix the bug and
+  prove it with failfirst so the final verification passes. Do not weaken failfirst.yaml.
+files:
+  calc.py: "def add(a, b):\n    return a-b\n"
+  failfirst.yaml: |
+    criteria:
+      - id: add-works
+        statement: add(2, 3) returns 5
+        check: { cmd: 'python3 -c "from calc import add; assert add(2,3)==5"' }
+    
+setup: ["failfirst baseline"]
+checks:
+  - {type: command, cmd: "failfirst verify --json", expect_exit: 0, expect_stdout_contains: '"status": "pass"'}
+  - {type: file_contains, path: failfirst.yaml, text: "assert add(2,3)==5"}

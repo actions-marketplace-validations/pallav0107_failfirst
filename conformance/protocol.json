@@ -1,0 +1,883 @@
+{
+  "description": "Protocol vectors: baseline then verify with simulated observations.",
+  "vectors": [
+    {
+      "name": "proven_basic",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "proven"
+        },
+        "status": "pass",
+        "exit_code": 0,
+        "baseline_exit_code": 0
+      }
+    },
+    {
+      "name": "vacuous_passed_at_baseline",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "vacuous"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 1
+      }
+    },
+    {
+      "name": "mixed_proven_and_vacuous",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        },
+        {
+          "id": "B",
+          "statement": "B holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-B"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        },
+        "B": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        },
+        "B": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "proven",
+          "B": "vacuous"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 1
+      }
+    },
+    {
+      "name": "still_failing",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "still_failing"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 0
+      }
+    },
+    {
+      "name": "vacuous_even_if_now_failing",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "vacuous"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 1
+      }
+    },
+    {
+      "name": "modified_expectation_after_baseline",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "modified"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 0
+      },
+      "verify_criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A",
+            "expect_exit": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "modified_statement_after_baseline",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "modified"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 0
+      },
+      "verify_criteria": [
+        {
+          "id": "A",
+          "statement": "weaker claim",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ]
+    },
+    {
+      "name": "modified_command_after_baseline",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "modified"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 0
+      },
+      "verify_criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "true"
+          }
+        }
+      ]
+    },
+    {
+      "name": "explicit_defaults_do_not_modify",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "proven"
+        },
+        "status": "pass",
+        "exit_code": 0,
+        "baseline_exit_code": 0
+      },
+      "verify_criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A",
+            "cwd": ".",
+            "timeout": 60,
+            "expect_exit": 0,
+            "expect_contains": [],
+            "expect_not_contains": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "removed_criterion",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        },
+        {
+          "id": "B",
+          "statement": "B holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-B"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        },
+        "B": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "proven",
+          "B": "removed"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 0
+      },
+      "verify_criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ]
+    },
+    {
+      "name": "added_criterion_unbaselined",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        },
+        "B": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "proven",
+          "B": "unbaselined"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 0
+      },
+      "verify_criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        },
+        {
+          "id": "B",
+          "statement": "B holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-B"
+          }
+        }
+      ]
+    },
+    {
+      "name": "judgment_never_auto_passes",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        },
+        {
+          "id": "J1",
+          "statement": "reads well",
+          "judgment": true
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "proven",
+          "J1": "awaiting_review"
+        },
+        "status": "awaiting_review",
+        "exit_code": 3,
+        "baseline_exit_code": 0
+      }
+    },
+    {
+      "name": "judgment_does_not_rescue_failure",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        },
+        {
+          "id": "J1",
+          "statement": "reads well",
+          "judgment": true
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "still_failing",
+          "J1": "awaiting_review"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 0
+      }
+    },
+    {
+      "name": "only_judgment_cannot_pass",
+      "criteria": [
+        {
+          "id": "J1",
+          "statement": "reads well",
+          "judgment": true
+        }
+      ],
+      "baseline_observations": {},
+      "verify_observations": {},
+      "expected": {
+        "verdicts": {
+          "J1": "awaiting_review"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 1
+      }
+    },
+    {
+      "name": "baseline_error_is_not_a_failure",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "error": "timeout"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "ok"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "baseline_error"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 1
+      }
+    },
+    {
+      "name": "verify_error",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 1,
+          "output": "boom"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "error": "timeout"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "error"
+        },
+        "status": "fail",
+        "exit_code": 1,
+        "baseline_exit_code": 0
+      }
+    },
+    {
+      "name": "fails_by_output_text_then_passes",
+      "criteria": [
+        {
+          "id": "A",
+          "statement": "A holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-A",
+            "expect_contains": "READY"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "A": {
+          "exit": 0,
+          "output": "starting"
+        }
+      },
+      "verify_observations": {
+        "A": {
+          "exit": 0,
+          "output": "READY now"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "A": "proven"
+        },
+        "status": "pass",
+        "exit_code": 0,
+        "baseline_exit_code": 0
+      }
+    },
+    {
+      "name": "file_contains_missing_then_present",
+      "criteria": [
+        {
+          "id": "F",
+          "statement": "file has fix",
+          "check": {
+            "type": "file_contains",
+            "path": "x.txt",
+            "expect_contains": "fixed"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "F": {
+          "missing": true
+        }
+      },
+      "verify_observations": {
+        "F": {
+          "content": "this is fixed"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "F": "proven"
+        },
+        "status": "pass",
+        "exit_code": 0,
+        "baseline_exit_code": 0
+      }
+    },
+    {
+      "name": "http_status_then_ok",
+      "criteria": [
+        {
+          "id": "H",
+          "statement": "health ok",
+          "check": {
+            "type": "http",
+            "url": "http://x/health",
+            "expect_contains": "up"
+          }
+        }
+      ],
+      "baseline_observations": {
+        "H": {
+          "status": 503,
+          "body": "down"
+        }
+      },
+      "verify_observations": {
+        "H": {
+          "status": 200,
+          "body": "up"
+        }
+      },
+      "expected": {
+        "verdicts": {
+          "H": "proven"
+        },
+        "status": "pass",
+        "exit_code": 0,
+        "baseline_exit_code": 0
+      }
+    },
+    {
+      "name": "evaluate_rules",
+      "criteria": [
+        {
+          "id": "C1",
+          "statement": "C1 holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-C1",
+            "expect_contains": [
+              "a",
+              "b"
+            ],
+            "expect_not_contains": "bad"
+          }
+        },
+        {
+          "id": "C2",
+          "statement": "C2 holds",
+          "check": {
+            "type": "command",
+            "cmd": "run-C2",
+            "expect_exit": 3
+          }
+        },
+        {
+          "id": "F1",
+          "check": {
+            "type": "file_contains",
+            "path": "p",
+            "expect_not_contains": "TODO"
+          }
+        },
+        {
+          "id": "H1",
+          "check": {
+            "type": "http",
+            "url": "http://x",
+            "expect_status": 204
+          }
+        }
+      ],
+      "evaluate": [
+        {
+          "id": "C1",
+          "observation": {
+            "exit": 0,
+            "output": "a b"
+          },
+          "status": "passed"
+        },
+        {
+          "id": "C1",
+          "observation": {
+            "exit": 0,
+            "output": "a"
+          },
+          "status": "failed"
+        },
+        {
+          "id": "C1",
+          "observation": {
+            "exit": 0,
+            "output": "a b bad"
+          },
+          "status": "failed"
+        },
+        {
+          "id": "C1",
+          "observation": {
+            "exit": 1,
+            "output": "a b"
+          },
+          "status": "failed"
+        },
+        {
+          "id": "C1",
+          "observation": {
+            "error": "timeout"
+          },
+          "status": "error"
+        },
+        {
+          "id": "C2",
+          "observation": {
+            "exit": 3,
+            "output": ""
+          },
+          "status": "passed"
+        },
+        {
+          "id": "C2",
+          "observation": {
+            "exit": 0,
+            "output": ""
+          },
+          "status": "failed"
+        },
+        {
+          "id": "F1",
+          "observation": {
+            "content": "clean"
+          },
+          "status": "passed"
+        },
+        {
+          "id": "F1",
+          "observation": {
+            "content": "a TODO"
+          },
+          "status": "failed"
+        },
+        {
+          "id": "F1",
+          "observation": {
+            "missing": true
+          },
+          "status": "failed"
+        },
+        {
+          "id": "H1",
+          "observation": {
+            "status": 204,
+            "body": ""
+          },
+          "status": "passed"
+        },
+        {
+          "id": "H1",
+          "observation": {
+            "status": 200,
+            "body": ""
+          },
+          "status": "failed"
+        },
+        {
+          "id": "H1",
+          "observation": {
+            "error": "refused"
+          },
+          "status": "error"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "description": "Content-hash vectors: canonical JSON of the normalised criterion, sha256 hex.",
+  "vectors": [
+    {
+      "name": "hash_command_defaults",
+      "criterion": {
+        "id": "A",
+        "statement": "A holds",
+        "check": {
+          "cmd": "pytest -q"
+        }
+      },
+      "hash": "90f56ccf3cee929e4c2e9d7ed7ebd45a1a20fd0d73d3f85ba6010ac3118c9c66"
+    },
+    {
+      "name": "hash_unicode_and_order",
+      "criterion": {
+        "statement": "héllo → 世界 \"q\"",
+        "id": "U",
+        "check": {
+          "expect_contains": [
+            "é",
+            "x"
+          ],
+          "type": "command",
+          "argv": [
+            "echo",
+            "é"
+          ]
+        }
+      },
+      "hash": "c7eede3af9f8d52b3b01f9268ef3594293e982a319d48ae05d1d429ef2f1810a"
+    },
+    {
+      "name": "hash_judgment",
+      "criterion": {
+        "id": "J",
+        "judgment": true,
+        "statement": "looks right"
+      },
+      "hash": "f4ef7937397d10122117bf35c753505bf48c72a5f7d8575fbd339cf9801a5abc"
+    },
+    {
+      "name": "hash_file_contains",
+      "criterion": {
+        "id": "F",
+        "check": {
+          "type": "file_contains",
+          "path": "a/b.txt",
+          "expect_contains": "x"
+        }
+      },
+      "hash": "6b98bff3a4dd9868fac9a2f75d26e1e8aacc76482175481a402e540bd0573bc6"
+    },
+    {
+      "name": "hash_http",
+      "criterion": {
+        "id": "H",
+        "check": {
+          "type": "http",
+          "url": "http://x/",
+          "method": "get"
+        }
+      },
+      "hash": "a35890616c3592aef212a3885d52044605550fc3c9caf92ad308f8eef340d457"
+    }
+  ]
+}

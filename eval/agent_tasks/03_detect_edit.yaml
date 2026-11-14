@@ -1,0 +1,17 @@
+id: detect-edited-criterion
+prompt: |
+  Someone changed failfirst.yaml after the baseline was recorded. Run the verification and find
+  out what failfirst says about criterion add-works. Write that verdict word, lowercase and
+  nothing else, to verdict.txt. Do not edit failfirst.yaml or calc.py.
+files:
+  calc.py: "def add(a, b):\n    return a-b\n"
+  failfirst.yaml: |
+    criteria:
+      - id: add-works
+        statement: add(2, 3) returns 5
+        check: { cmd: 'python3 -c "from calc import add; assert add(2,3)==5"' }
+    
+setup:
+  - "failfirst baseline; sed -i 's/a-b/a+b/' calc.py; sed -i 's/assert add(2,3)==5/pass/' failfirst.yaml"
+checks:
+  - {type: file_contains, path: verdict.txt, text: modified}

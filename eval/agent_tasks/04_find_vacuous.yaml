@@ -1,0 +1,19 @@
+id: find-vacuous
+prompt: |
+  calc.py is already correct and failfirst.yaml has criteria add-works and sub-works. Record the
+  baseline with failfirst and write the id of every criterion that failfirst reports as vacuous
+  (one per line) to vacuous.txt.
+files:
+  calc.py: "def add(a, b):\n    return a+b\n\ndef sub(a, b):\n    return a+b\n"
+  failfirst.yaml: |
+    criteria:
+      - id: add-works
+        statement: add(2, 3) returns 5
+        check: { cmd: 'python3 -c "from calc import add; assert add(2,3)==5"' }
+    
+      - id: sub-works
+        check: { cmd: 'python3 -c "from calc import sub; assert sub(5,3)==2"' }
+checks:
+  - {type: file_exists, path: .failfirst.lock.json}
+  - {type: file_contains, path: vacuous.txt, text: add-works}
+  - {type: file_not_contains, path: vacuous.txt, text: sub-works}

@@ -1,0 +1,331 @@
+{
+  "description": "CLI behaviour vectors: each step is an argv list (run in a fresh temp dir with files written first) or {write: files}. The LAST step is checked: exit status, error.code (stdout JSON), json_contains (recursive subset), lock_exists, stdout_lines.",
+  "vectors": [
+    {
+      "name": "usage_no_command",
+      "files": {},
+      "steps": [
+        [
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_USAGE"
+      }
+    },
+    {
+      "name": "usage_unknown_command",
+      "files": {},
+      "steps": [
+        [
+          "frobnicate",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_USAGE"
+      }
+    },
+    {
+      "name": "usage_unknown_flag",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"statement\": \"flag exists\", \"check\": {\"cmd\": \"test -f flag\"}}]}"
+      },
+      "steps": [
+        [
+          "verify",
+          "--bogus",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_USAGE"
+      }
+    },
+    {
+      "name": "no_criteria",
+      "files": {},
+      "steps": [
+        [
+          "baseline",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_NO_CRITERIA"
+      }
+    },
+    {
+      "name": "no_criteria_explicit_path",
+      "files": {},
+      "steps": [
+        [
+          "verify",
+          "missing.yaml",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_NO_CRITERIA"
+      }
+    },
+    {
+      "name": "bad_criteria_empty_list",
+      "files": {
+        "failfirst.json": "{\"criteria\": []}"
+      },
+      "steps": [
+        [
+          "baseline",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_BAD_CRITERIA"
+      }
+    },
+    {
+      "name": "bad_criteria_syntax",
+      "files": {
+        "failfirst.json": "{nope"
+      },
+      "steps": [
+        [
+          "baseline",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_BAD_CRITERIA"
+      }
+    },
+    {
+      "name": "no_lock",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"statement\": \"flag exists\", \"check\": {\"cmd\": \"test -f flag\"}}]}"
+      },
+      "steps": [
+        [
+          "verify",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_NO_LOCK"
+      }
+    },
+    {
+      "name": "lock_exists",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"statement\": \"flag exists\", \"check\": {\"cmd\": \"test -f flag\"}}]}"
+      },
+      "steps": [
+        [
+          "baseline",
+          "--json"
+        ],
+        [
+          "baseline",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_LOCK_EXISTS"
+      }
+    },
+    {
+      "name": "bad_lock_garbage",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"statement\": \"flag exists\", \"check\": {\"cmd\": \"test -f flag\"}}]}",
+        ".failfirst.lock.json": "not json"
+      },
+      "steps": [
+        [
+          "verify",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_BAD_LOCK"
+      }
+    },
+    {
+      "name": "bad_lock_version",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"statement\": \"flag exists\", \"check\": {\"cmd\": \"test -f flag\"}}]}",
+        ".failfirst.lock.json": "{\"failfirst_lock\": 2, \"criteria\": {}}"
+      },
+      "steps": [
+        [
+          "verify",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_BAD_LOCK"
+      }
+    },
+    {
+      "name": "baseline_dry_run",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"statement\": \"flag exists\", \"check\": {\"cmd\": \"test -f flag\"}}]}"
+      },
+      "steps": [
+        [
+          "baseline",
+          "--dry-run",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 0,
+        "json_contains": {
+          "phase": "baseline",
+          "status": "ok",
+          "dry_run": true
+        },
+        "lock_exists": false
+      }
+    },
+    {
+      "name": "baseline_writes_lock",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"statement\": \"flag exists\", \"check\": {\"cmd\": \"test -f flag\"}}]}"
+      },
+      "steps": [
+        [
+          "baseline",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 0,
+        "json_contains": {
+          "status": "ok",
+          "summary": {
+            "failed_as_required": 1
+          }
+        },
+        "lock_exists": true
+      }
+    },
+    {
+      "name": "verify_proven_after_fix",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"statement\": \"flag exists\", \"check\": {\"cmd\": \"test -f flag\"}}]}"
+      },
+      "steps": [
+        [
+          "baseline",
+          "--json"
+        ],
+        {
+          "write": {
+            "flag": "x"
+          }
+        },
+        [
+          "verify",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 0,
+        "json_contains": {
+          "phase": "verify",
+          "status": "pass",
+          "summary": {
+            "proven": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "verify_still_failing",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"statement\": \"flag exists\", \"check\": {\"cmd\": \"test -f flag\"}}]}"
+      },
+      "steps": [
+        [
+          "baseline",
+          "--json"
+        ],
+        [
+          "verify",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 1,
+        "json_contains": {
+          "status": "fail",
+          "summary": {
+            "still_failing": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "quiet_json_is_one_line",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"statement\": \"flag exists\", \"check\": {\"cmd\": \"test -f flag\"}}]}"
+      },
+      "steps": [
+        [
+          "baseline",
+          "--json",
+          "--quiet"
+        ]
+      ],
+      "expected": {
+        "exit": 0,
+        "stdout_lines": 1
+      }
+    },
+    {
+      "name": "version_json",
+      "files": {},
+      "steps": [
+        [
+          "--version",
+          "--json"
+        ]
+      ],
+      "expected": {
+        "exit": 0,
+        "json_contains": {
+          "tool": "failfirst"
+        }
+      }
+    },
+    {
+      "name": "report_unwritable",
+      "files": {
+        "failfirst.json": "{\"criteria\": [{\"id\": \"A\", \"check\": {\"cmd\": \"test -f flag\"}}]}"
+      },
+      "steps": [
+        [
+          "baseline",
+          "--json",
+          "--report",
+          "no/such/dir/r.json"
+        ]
+      ],
+      "expected": {
+        "exit": 2,
+        "error_code": "FF_E_IO"
+      }
+    }
+  ]
+}
