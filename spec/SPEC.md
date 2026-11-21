@@ -100,7 +100,7 @@ Verify only runs checks of criteria that are baseline-`failed` and unchanged.
 ## 7. JSON report
 
 ```json
-{"tool":"failfirst","version":"0.1.0","phase":"verify","status":"pass|fail|awaiting_review",
+{"tool":"failfirst","version":"0.1.1","phase":"verify","status":"pass|fail|awaiting_review",
  "exit_code":0,"summary":{"proven":2},
  "criteria":[{"id":"C1","statement":"...","judgment":false,"verdict":"proven","reason":"...",
               "baseline":{"status":"failed","detail":"..."},"now":{"status":"passed","detail":"ok"}}]}
