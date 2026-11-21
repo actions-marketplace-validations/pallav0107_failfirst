@@ -105,11 +105,19 @@ function textChecks(check: Check, text: string): string | null {
   return null;
 }
 
+// POSIX shell statuses that mean the command never ran (spec section 2).
+const SHELL_EXIT: Record<number, string> = {
+  127: "shell could not find the command",
+  126: "shell could not execute the command",
+};
+
 export function evaluate(criterion: Criterion, obs: Observation): Evaluation {
   const check = criterion.check as Check;
   if (obs.error !== undefined) return { status: "error", detail: String(obs.error) };
   let problem: string | null;
   if (check.type === "command") {
+    const shellMsg = check.cmd !== undefined && obs.exit !== check.expect_exit ? SHELL_EXIT[obs.exit as number] : undefined;
+    if (shellMsg) return { status: "error", detail: `${shellMsg} (exit ${obs.exit})` };
     if (obs.exit !== check.expect_exit) return { status: "failed", detail: `exit ${obs.exit}, expected ${check.expect_exit}` };
     problem = textChecks(check, obs.output ?? "");
   } else if (check.type === "file_contains") {

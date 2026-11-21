@@ -60,7 +60,10 @@ ev = {"name": "evaluate_rules", "criteria": [
   cmd("C1", expect_contains=["a", "b"], expect_not_contains="bad"),
   cmd("C2", expect_exit=3),
   {"id": "F1", "check": {"type": "file_contains", "path": "p", "expect_not_contains": "TODO"}},
-  {"id": "H1", "check": {"type": "http", "url": "http://x", "expect_status": 204}}],
+  {"id": "H1", "check": {"type": "http", "url": "http://x", "expect_status": 204}},
+  cmd("S1"),
+  cmd("S2", expect_exit=127),
+  {"id": "S3", "check": {"type": "command", "argv": ["run-S3"]}}],
  "evaluate": [
   {"id": "C1", "observation": {"exit": 0, "output": "a b"}, "status": "passed"},
   {"id": "C1", "observation": {"exit": 0, "output": "a"}, "status": "failed"},
@@ -74,7 +77,13 @@ ev = {"name": "evaluate_rules", "criteria": [
   {"id": "F1", "observation": {"missing": True}, "status": "failed"},
   {"id": "H1", "observation": {"status": 204, "body": ""}, "status": "passed"},
   {"id": "H1", "observation": {"status": 200, "body": ""}, "status": "failed"},
-  {"id": "H1", "observation": {"error": "refused"}, "status": "error"}]}
+  {"id": "H1", "observation": {"error": "refused"}, "status": "error"},
+  {"id": "S1", "observation": {"exit": 127, "output": "sh: 1: run-S1: not found"}, "status": "error"},
+  {"id": "S1", "observation": {"exit": 126, "output": "sh: 1: run-S1: Permission denied"}, "status": "error"},
+  {"id": "S2", "observation": {"exit": 127, "output": ""}, "status": "passed"},
+  {"id": "S2", "observation": {"exit": 126, "output": ""}, "status": "error"},
+  {"id": "S3", "observation": {"exit": 127, "output": ""}, "status": "failed"},
+  {"id": "S3", "observation": {"exit": 126, "output": ""}, "status": "failed"}]}
 hs = []
 for name, c in [("hash_command_defaults", {"id": "A", "statement": "A holds", "check": {"cmd": "pytest -q"}}),
                 ("hash_unicode_and_order", {"statement": "héllo → 世界 \"q\"", "id": "U", "check": {"expect_contains": ["é", "x"], "type": "command", "argv": ["echo", "é"]}}),

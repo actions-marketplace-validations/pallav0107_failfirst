@@ -33,7 +33,7 @@ All numbers MUST be integers.
 
 Running a check yields a raw *observation*:
 
-* command: `{"exit": int, "output": str}`
+* command: `{"exit": int, "output": str}` (for `cmd`, a shell exit of 127 or 126 is evaluated as `error`, see below)
 * file_contains: `{"content": str}` or `{"missing": true}`
 * http: `{"status": int, "body": str}`
 * any: `{"error": str}` when the check could not be run (cannot spawn, timeout, network failure, unreadable file).
@@ -41,10 +41,11 @@ Running a check yields a raw *observation*:
 Evaluation turns an observation into a status:
 
 * `error` if the observation is an error;
+* `error` if the check is a `command` written with `cmd` (shell form), the observed exit is 127 or 126, and `expect_exit` is not that same status. A POSIX shell reports a command it cannot find as 127 and one it cannot execute as 126; neither has run the thing under test. The detail says why (`shell could not find the command (exit 127)` / `shell could not execute the command (exit 126)`). If `expect_exit` equals the observed 127 or 126, this rule does not apply and evaluation continues as below, so the check can pass. A check written with `argv` (no shell) is exempt: its 127/126 is the program's own status and is `failed` when it differs from `expect_exit`. Only POSIX shells are covered; Windows `cmd.exe` is out of scope and its codes are not special-cased;
 * otherwise `failed` if the exit/status differs from the expectation, the file is missing, an `expect_contains` text is absent, or an `expect_not_contains` text is present;
 * otherwise `passed`.
 
-`error` is never evidence of failure: a command that timed out or does not exist has not demonstrated the bug.
+`error` is never evidence of failure: a command that timed out or does not exist (shell exit 127, or 126 if not executable, per the rule above) has not demonstrated the bug.
 
 ## 3. Normalisation and hash
 

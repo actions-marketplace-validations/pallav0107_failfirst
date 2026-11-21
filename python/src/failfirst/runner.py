@@ -78,6 +78,10 @@ def _text_checks(check: dict, text: str) -> str | None:
     return None
 
 
+# POSIX shell statuses that mean the command never ran (spec section 2).
+_SHELL_EXIT = {127: "shell could not find the command", 126: "shell could not execute the command"}
+
+
 def evaluate(criterion: dict, obs: dict) -> dict:
     """Turn an observation into {"status": passed|failed|error, "detail": str}."""
     check = criterion["check"]
@@ -85,6 +89,8 @@ def evaluate(criterion: dict, obs: dict) -> dict:
         return {"status": "error", "detail": str(obs["error"])}
     kind = check["type"]
     if kind == "command":
+        if "cmd" in check and obs["exit"] in _SHELL_EXIT and obs["exit"] != check["expect_exit"]:
+            return {"status": "error", "detail": f"{_SHELL_EXIT[obs['exit']]} (exit {obs['exit']})"}
         if obs["exit"] != check["expect_exit"]:
             return {"status": "failed", "detail": f"exit {obs['exit']}, expected {check['expect_exit']}"}
         problem = _text_checks(check, obs.get("output", ""))
