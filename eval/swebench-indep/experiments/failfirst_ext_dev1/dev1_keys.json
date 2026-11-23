@@ -1,0 +1,157 @@
+{
+ "deviation": "D1",
+ "keys": [
+  {
+   "check_id": "astropy__astropy-13453#1",
+   "check_sha256": "73be833986555d183f0ded6bac74b60bbfc2e0f5c957245324bb951e553f903e",
+   "image": "swebench/sweb.eval.x86_64.astropy_1776_astropy-13453:latest",
+   "instance_id": "astropy__astropy-13453",
+   "patch_sha256": "8154e7dfa3aeef1ef20bff11e442494e57f28093abb03482932e30b40c160a6f",
+   "registered_attempts": 2,
+   "setup_file": "pyproject.toml",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "check_id": "astropy__astropy-13453#2",
+   "check_sha256": "1a209ae1d9062afd35ac33166ea7e3b4152eac285e479be90f8c008ac1bb614f",
+   "image": "swebench/sweb.eval.x86_64.astropy_1776_astropy-13453:latest",
+   "instance_id": "astropy__astropy-13453",
+   "patch_sha256": "8154e7dfa3aeef1ef20bff11e442494e57f28093abb03482932e30b40c160a6f",
+   "registered_attempts": 2,
+   "setup_file": "pyproject.toml",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "check_id": "astropy__astropy-13453#3",
+   "check_sha256": "1fb11f3752fb5254b0b64df16f023c2434a0cfbf1fc0567ee3ff126c1626dc7d",
+   "image": "swebench/sweb.eval.x86_64.astropy_1776_astropy-13453:latest",
+   "instance_id": "astropy__astropy-13453",
+   "patch_sha256": "8154e7dfa3aeef1ef20bff11e442494e57f28093abb03482932e30b40c160a6f",
+   "registered_attempts": 2,
+   "setup_file": "pyproject.toml",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "check_id": "astropy__astropy-14369#1",
+   "check_sha256": "361d8c7611f79aaa2786031c3f5faa0c50e52921d03a7bee83f2efbc491d7717",
+   "image": "swebench/sweb.eval.x86_64.astropy_1776_astropy-14369:latest",
+   "instance_id": "astropy__astropy-14369",
+   "patch_sha256": "4d864add099e81ba8b756a928e40c53d01d083499ae6600b07066fe98d87b4fd",
+   "registered_attempts": 2,
+   "setup_file": "pyproject.toml",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "check_id": "astropy__astropy-14369#2",
+   "check_sha256": "167939d9ea17491b116ce29f0a4a1a31f0f72963ecdc8d3b8cc5078038c794ed",
+   "image": "swebench/sweb.eval.x86_64.astropy_1776_astropy-14369:latest",
+   "instance_id": "astropy__astropy-14369",
+   "patch_sha256": "4d864add099e81ba8b756a928e40c53d01d083499ae6600b07066fe98d87b4fd",
+   "registered_attempts": 2,
+   "setup_file": "pyproject.toml",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "check_id": "astropy__astropy-14369#3",
+   "check_sha256": "424f0dad07a5541afd087a1799368bffc69a4ff1acfc60ed750c8cbad587b863",
+   "image": "swebench/sweb.eval.x86_64.astropy_1776_astropy-14369:latest",
+   "instance_id": "astropy__astropy-14369",
+   "patch_sha256": "4d864add099e81ba8b756a928e40c53d01d083499ae6600b07066fe98d87b4fd",
+   "registered_attempts": 2,
+   "setup_file": "pyproject.toml",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "check_id": "sphinx-doc__sphinx-10323#1",
+   "check_sha256": "7e4fccc46926c3073837e604d5d8115a64ab46ed7020d12e21b652dda0a071a5",
+   "image": "swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-10323:latest",
+   "instance_id": "sphinx-doc__sphinx-10323",
+   "patch_sha256": "dee5b8424026a143afcbbbd59e53c8587560df6266f89efb165add77b05c3553",
+   "registered_attempts": 2,
+   "setup_file": "tox.ini",
+   "target": "patch:20250623_warp"
+  },
+  {
+   "check_id": "sphinx-doc__sphinx-10323#2",
+   "check_sha256": "4a3bb4511513d5032a1ef5cdab6af7d58441d028012e92d1986945556015a24b",
+   "image": "swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-10323:latest",
+   "instance_id": "sphinx-doc__sphinx-10323",
+   "patch_sha256": "dee5b8424026a143afcbbbd59e53c8587560df6266f89efb165add77b05c3553",
+   "registered_attempts": 2,
+   "setup_file": "tox.ini",
+   "target": "patch:20250623_warp"
+  },
+  {
+   "check_id": "sphinx-doc__sphinx-10323#3",
+   "check_sha256": "5f5cbdba6ceaa14828f97a704933154937097c61cb2e825eafff5352717fb0eb",
+   "image": "swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-10323:latest",
+   "instance_id": "sphinx-doc__sphinx-10323",
+   "patch_sha256": "dee5b8424026a143afcbbbd59e53c8587560df6266f89efb165add77b05c3553",
+   "registered_attempts": 2,
+   "setup_file": "tox.ini",
+   "target": "patch:20250623_warp"
+  },
+  {
+   "check_id": "sphinx-doc__sphinx-8721#1",
+   "check_sha256": "2cf0ca6f14faf5c7e08c44e7340a2782a3c4346869e3bb1249cff1ff93cb7328",
+   "image": "swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-8721:latest",
+   "instance_id": "sphinx-doc__sphinx-8721",
+   "patch_sha256": "9102429b115c16f2116df89e7e33654f37d69476b71c90326701ef16f1427aca",
+   "registered_attempts": 2,
+   "setup_file": "setup.py",
+   "target": "patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts"
+  },
+  {
+   "check_id": "sphinx-doc__sphinx-8721#2",
+   "check_sha256": "ab2a8b149cb8225766c3ce830b1900f16a7c441ef79cc3f9c543aa43cc757857",
+   "image": "swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-8721:latest",
+   "instance_id": "sphinx-doc__sphinx-8721",
+   "patch_sha256": "9102429b115c16f2116df89e7e33654f37d69476b71c90326701ef16f1427aca",
+   "registered_attempts": 2,
+   "setup_file": "setup.py",
+   "target": "patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts"
+  },
+  {
+   "check_id": "sphinx-doc__sphinx-8721#3",
+   "check_sha256": "5afc05473e825f674314ff9cfe9e3bae1a5f950feda22bdf4615dd779f817435",
+   "image": "swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-8721:latest",
+   "instance_id": "sphinx-doc__sphinx-8721",
+   "patch_sha256": "9102429b115c16f2116df89e7e33654f37d69476b71c90326701ef16f1427aca",
+   "registered_attempts": 2,
+   "setup_file": "setup.py",
+   "target": "patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts"
+  },
+  {
+   "check_id": "sphinx-doc__sphinx-9281#1",
+   "check_sha256": "2f6e0f4e7d7f7a9382d9cca093b55ab08cece4901d00ee3e838d23d4088ae485",
+   "image": "swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-9281:latest",
+   "instance_id": "sphinx-doc__sphinx-9281",
+   "patch_sha256": "896e68279770239d918cca169f220c41dfa9b32e6e8b3c4b945cdb97416eb800",
+   "registered_attempts": 2,
+   "setup_file": "setup.py",
+   "target": "patch:20241023_emergent"
+  },
+  {
+   "check_id": "sphinx-doc__sphinx-9281#2",
+   "check_sha256": "4484110ead99a8b57fbe6acdeb8d71d3bc6a6923119f43a2eaedc15ec706cf1a",
+   "image": "swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-9281:latest",
+   "instance_id": "sphinx-doc__sphinx-9281",
+   "patch_sha256": "896e68279770239d918cca169f220c41dfa9b32e6e8b3c4b945cdb97416eb800",
+   "registered_attempts": 2,
+   "setup_file": "setup.py",
+   "target": "patch:20241023_emergent"
+  },
+  {
+   "check_id": "sphinx-doc__sphinx-9281#3",
+   "check_sha256": "34a8aba970f3cca7fc7ab9e7a6fe0689676ae4ae5dd149678e1e0db9bd5640ed",
+   "image": "swebench/sweb.eval.x86_64.sphinx-doc_1776_sphinx-9281:latest",
+   "instance_id": "sphinx-doc__sphinx-9281",
+   "patch_sha256": "896e68279770239d918cca169f220c41dfa9b32e6e8b3c4b945cdb97416eb800",
+   "registered_attempts": 2,
+   "setup_file": "setup.py",
+   "target": "patch:20241023_emergent"
+  }
+ ],
+ "results_jsonl_rows": 2715,
+ "results_jsonl_sha256": "9f93354ab893fd38c77e0651dda60d1e7e15ab3840d67ceec8dd31a8eb1da59a"
+}

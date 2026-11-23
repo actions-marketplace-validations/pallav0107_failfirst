@@ -67,6 +67,7 @@ Built for agents to call without help: [`llms.txt`](llms.txt) and [`AGENTS.md`](
 * Every command takes `--json`; the output shapes are the JSON Schemas in [`schemas/`](schemas/). `--quiet` gives one line (or compact JSON), `baseline --dry-run` writes nothing.
 * Failures are `{"error": {"code", "message", "hint"}}` with stable `FF_E_*` codes and exit 2. Nothing prompts, reads stdin or prints ANSI colour.
 * `eval/run_agent_eval.py` is the agent task eval (scripted tasks in `eval/agent_tasks/`; needs an OpenAI-compatible endpoint).
+* [`eval/swebench-indep/`](eval/swebench-indep/) is the preregistered test of fail-first on SWE-bench Verified (plan hash in [`prereg/`](prereg/)): plan, deviation, model-written checks, run data and analysis. Under the registered rule it is BLOCKED; under deviation D1, fail-first removed vacuous checks, but checks that failed first still accepted 25% of runs on wrong patches.
 
 ## What it is not
 

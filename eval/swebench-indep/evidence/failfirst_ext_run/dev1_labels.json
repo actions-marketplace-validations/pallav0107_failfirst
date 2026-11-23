@@ -1,0 +1,49 @@
+{
+ "agree": 3,
+ "deviation": "D1",
+ "n": 5,
+ "pairs": [
+  {
+   "agree": false,
+   "instance_id": "astropy__astropy-13453",
+   "patch_successfully_applied": true,
+   "published_label": "resolved",
+   "rerun_label": "unresolved",
+   "submission": "20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "agree": true,
+   "instance_id": "astropy__astropy-14369",
+   "patch_successfully_applied": true,
+   "published_label": "unresolved",
+   "rerun_label": "unresolved",
+   "submission": "20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "agree": true,
+   "instance_id": "sphinx-doc__sphinx-9281",
+   "patch_successfully_applied": true,
+   "published_label": "unresolved",
+   "rerun_label": "unresolved",
+   "submission": "20241023_emergent"
+  },
+  {
+   "agree": false,
+   "instance_id": "sphinx-doc__sphinx-10323",
+   "patch_successfully_applied": true,
+   "published_label": "resolved",
+   "rerun_label": "unresolved",
+   "submission": "20250623_warp"
+  },
+  {
+   "agree": true,
+   "instance_id": "sphinx-doc__sphinx-8721",
+   "patch_successfully_applied": true,
+   "published_label": "unresolved",
+   "rerun_label": "unresolved",
+   "submission": "20250901_entroPO_R2E_QwenCoder30BA3B_tts"
+  }
+ ],
+ "task_id": "failfirst-swebench-indep",
+ "what": "official harness (swebench 4.1.0, run id ffx_dev1_labels) rerun of the 5 D1 pairs, outside the registered 120-pair audit"
+}

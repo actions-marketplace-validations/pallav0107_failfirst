@@ -1,0 +1,984 @@
+{
+ "claimed_verdict_under_d1": "AGAINST",
+ "d1_problems": [],
+ "d1_rows": [
+  {
+   "applied": true,
+   "check_id": "astropy__astropy-13453#1",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "pyproject.toml",
+   "started_utc": "2026-11-22T20:54:55+00:00",
+   "status": "completed",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "applied": true,
+   "check_id": "astropy__astropy-13453#2",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "pyproject.toml",
+   "started_utc": "2026-11-22T20:54:56+00:00",
+   "status": "completed",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "applied": true,
+   "check_id": "astropy__astropy-13453#3",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "pyproject.toml",
+   "started_utc": "2026-11-22T20:54:57+00:00",
+   "status": "completed",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "applied": true,
+   "check_id": "astropy__astropy-14369#1",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "pyproject.toml",
+   "started_utc": "2026-11-22T20:54:58+00:00",
+   "status": "completed",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "applied": true,
+   "check_id": "astropy__astropy-14369#2",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "pyproject.toml",
+   "started_utc": "2026-11-22T20:54:59+00:00",
+   "status": "completed",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "applied": true,
+   "check_id": "astropy__astropy-14369#3",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "pyproject.toml",
+   "started_utc": "2026-11-22T20:55:00+00:00",
+   "status": "completed",
+   "target": "patch:20241022_tools_claude-3-5-sonnet-updated"
+  },
+  {
+   "applied": true,
+   "check_id": "sphinx-doc__sphinx-10323#1",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "tox.ini",
+   "started_utc": "2026-11-22T20:55:01+00:00",
+   "status": "completed",
+   "target": "patch:20250623_warp"
+  },
+  {
+   "applied": true,
+   "check_id": "sphinx-doc__sphinx-10323#2",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "tox.ini",
+   "started_utc": "2026-11-22T20:55:02+00:00",
+   "status": "completed",
+   "target": "patch:20250623_warp"
+  },
+  {
+   "applied": true,
+   "check_id": "sphinx-doc__sphinx-10323#3",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "tox.ini",
+   "started_utc": "2026-11-22T20:55:03+00:00",
+   "status": "completed",
+   "target": "patch:20250623_warp"
+  },
+  {
+   "applied": true,
+   "check_id": "sphinx-doc__sphinx-8721#1",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "setup.py",
+   "started_utc": "2026-11-22T20:55:03+00:00",
+   "status": "completed",
+   "target": "patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts"
+  },
+  {
+   "applied": true,
+   "check_id": "sphinx-doc__sphinx-8721#2",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "setup.py",
+   "started_utc": "2026-11-22T20:55:05+00:00",
+   "status": "completed",
+   "target": "patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts"
+  },
+  {
+   "applied": true,
+   "check_id": "sphinx-doc__sphinx-8721#3",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "setup.py",
+   "started_utc": "2026-11-22T20:55:05+00:00",
+   "status": "completed",
+   "target": "patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts"
+  },
+  {
+   "applied": true,
+   "check_id": "sphinx-doc__sphinx-9281#1",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "setup.py",
+   "started_utc": "2026-11-22T20:55:06+00:00",
+   "status": "completed",
+   "target": "patch:20241023_emergent"
+  },
+  {
+   "applied": true,
+   "check_id": "sphinx-doc__sphinx-9281#2",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "setup.py",
+   "started_utc": "2026-11-22T20:55:07+00:00",
+   "status": "completed",
+   "target": "patch:20241023_emergent"
+  },
+  {
+   "applied": true,
+   "check_id": "sphinx-doc__sphinx-9281#3",
+   "d1_markers": "patch_fuzz5 S=0 POSTCOND=0 SETUP_DIFFERS_FROM_HEAD=1",
+   "setup_file": "setup.py",
+   "started_utc": "2026-11-22T20:55:07+00:00",
+   "status": "completed",
+   "target": "patch:20241023_emergent"
+  }
+ ],
+ "dev1_results_sha256": "c2cf4d66ac44f2d20f91f62c4ed6d1c49397155ad339165571a2c862ed7ceddf",
+ "deviation": "D1",
+ "frozen_prereg_sha256": "56f2d4099b2dfa1fd71ead2f228e6705b018359e75cd7a49e51ca5161e1cac56",
+ "registered_status": "BLOCKED (15 verdicts missing after the registered retry)",
+ "results_jsonl_sha256": "9f93354ab893fd38c77e0651dda60d1e7e15ab3840d67ceec8dd31a8eb1da59a",
+ "robustness_rule": "all four verdicts identical, else no verdict claimed",
+ "task_id": "failfirst-swebench-indep",
+ "variants": [
+  {
+   "arms": {
+    "failfirst": {
+     "fgs": 0.3135464231354642,
+     "n_checks": 271,
+     "n_green": 657,
+     "n_green_unresolved": 206
+    },
+    "unfiltered": {
+     "fgs": 0.34317343173431736,
+     "n_checks": 300,
+     "n_green": 813,
+     "n_green_unresolved": 279
+    }
+   },
+   "integrity_failures": [],
+   "missing_waived": false,
+   "n_checks": 300,
+   "n_missing_raw": 0,
+   "n_pairs": 1800,
+   "placebo": {
+    "ci95": [
+     0.01409541754992022,
+     0.023931449227028723
+    ],
+    "delta_mean": 0.018564890247642497,
+    "draws": 1000,
+    "p975": 0.023931449227028723,
+    "seed": 20261124,
+    "stratified_by": "instance",
+    "undefined": 0
+   },
+   "primary": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_undefined": 0,
+    "ci95": [
+     0.013327690801607181,
+     0.05025082952896306
+    ],
+    "cluster": "instance",
+    "delta_fgs": 0.029627008598853144,
+    "metric": "FGS_A - FGS_B",
+    "seed": 20261123
+   },
+   "problems_waived": [
+    "('astropy__astropy-13453#1', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-13453#2', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-13453#3', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-14369#1', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-14369#2', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-14369#3', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-10323#1', 'patch:20250623_warp'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-10323#2', 'patch:20250623_warp'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-10323#3', 'patch:20250623_warp'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-8721#1', 'patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-8721#2', 'patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-8721#3', 'patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-9281#1', 'patch:20241023_emergent'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-9281#2', 'patch:20241023_emergent'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-9281#3', 'patch:20241023_emergent'): attempt 3 exceeds the registered single retry"
+   ],
+   "secondary": {
+    "all_vacuous_instance_share": 0.03,
+    "by_repo": {
+     "astropy/astropy": {
+      "error_share": 0.0,
+      "fgs_a": 0.26666666666666666,
+      "fgs_b": 0.26666666666666666,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "django/django": {
+      "error_share": 0.0,
+      "fgs_a": 0.3161764705882353,
+      "fgs_b": 0.316,
+      "n_instances": 46,
+      "vacuous_share": 0.036231884057971016
+     },
+     "matplotlib/matplotlib": {
+      "error_share": 0.0,
+      "fgs_a": 0.34523809523809523,
+      "fgs_b": 0.3194444444444444,
+      "n_instances": 8,
+      "vacuous_share": 0.08333333333333333
+     },
+     "psf/requests": {
+      "error_share": 0.0,
+      "fgs_a": null,
+      "fgs_b": null,
+      "n_instances": 2,
+      "vacuous_share": 0.0
+     },
+     "pydata/xarray": {
+      "error_share": 0.0,
+      "fgs_a": 0.05555555555555555,
+      "fgs_b": 0.05555555555555555,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "pylint-dev/pylint": {
+      "error_share": 0.0,
+      "fgs_a": 0.4666666666666667,
+      "fgs_b": 0.4117647058823529,
+      "n_instances": 5,
+      "vacuous_share": 0.4666666666666667
+     },
+     "pytest-dev/pytest": {
+      "error_share": 0.0,
+      "fgs_a": 0.5,
+      "fgs_b": null,
+      "n_instances": 2,
+      "vacuous_share": 0.3333333333333333
+     },
+     "scikit-learn/scikit-learn": {
+      "error_share": 0.0,
+      "fgs_a": 0.325,
+      "fgs_b": 0.325,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "sphinx-doc/sphinx": {
+      "error_share": 0.0,
+      "fgs_a": 0.43478260869565216,
+      "fgs_b": 0.14285714285714285,
+      "n_instances": 8,
+      "vacuous_share": 0.4583333333333333
+     },
+     "sympy/sympy": {
+      "error_share": 0.0,
+      "fgs_a": 0.36666666666666664,
+      "fgs_b": 0.3583815028901734,
+      "n_instances": 14,
+      "vacuous_share": 0.047619047619047616
+     }
+    },
+    "decomposition": {
+     "error_ci95": [
+      0.0,
+      0.0
+     ],
+     "from_removing_error_on_unfixed": 0.0,
+     "from_removing_pass_on_unfixed": 0.029627008598853144,
+     "pass_ci95": [
+      0.013327690801607181,
+      0.05025082952896306
+     ]
+    },
+    "error_ci95": [
+     0.0,
+     0.0
+    ],
+    "error_share": 0.0,
+    "fail_unfixed_pass_gold_share": 0.49666666666666665,
+    "fpr": {
+     "failfirst": 0.25338253382533826,
+     "unfiltered": 0.31
+    },
+    "fpr_ci95": {
+     "failfirst": [
+      0.1914866650486746,
+      0.31914962074536546
+     ],
+     "unfiltered": [
+      0.2477777777777778,
+      0.37666666666666665
+     ]
+    },
+    "kept_ci95": [
+     0.7631016497700178,
+     0.9148936170212766
+    ],
+    "kept_resolved_green_share": 0.8445692883895131,
+    "no_failfirst_instance_share": 0.03,
+    "residual_ci95": [
+     0.1914866650486746,
+     0.31914962074536546
+    ],
+    "residual_false_green_rate": 0.25338253382533826,
+    "strict_ci95": [
+     -0.02155004988720173,
+     0.05740631775484762
+    ],
+    "strict_delta_fgs": 0.014968303529189153,
+    "tpr": {
+     "failfirst": 0.5547355473554736,
+     "unfiltered": 0.5933333333333334
+    },
+    "tpr_ci95": {
+     "failfirst": [
+      0.46341386425227893,
+      0.6457602872732023
+     ],
+     "unfiltered": [
+      0.5121944444444445,
+      0.676694444444444
+     ]
+    },
+    "vacuous_share": 0.09666666666666666,
+    "vacuous_share_ci95": [
+     0.05333333333333334,
+     0.14666666666666667
+    ]
+   },
+   "unfixed_outcomes": {
+    "ERROR": 0,
+    "FAIL": 271,
+    "PASS": 29
+   },
+   "variant": "V1_d1",
+   "verdict": "AGAINST"
+  },
+  {
+   "arms": {
+    "failfirst": {
+     "fgs": 0.3185419968304279,
+     "n_checks": 259,
+     "n_green": 631,
+     "n_green_unresolved": 201
+    },
+    "unfiltered": {
+     "fgs": 0.3471502590673575,
+     "n_checks": 285,
+     "n_green": 772,
+     "n_green_unresolved": 268
+    }
+   },
+   "integrity_failures": [],
+   "missing_waived": true,
+   "n_checks": 285,
+   "n_missing_raw": 15,
+   "n_pairs": 1785,
+   "placebo": {
+    "ci95": [
+     0.012826336333330801,
+     0.022786287068891846
+    ],
+    "delta_mean": 0.017385175087038615,
+    "draws": 1000,
+    "p975": 0.022786287068891846,
+    "seed": 20261124,
+    "stratified_by": "instance",
+    "undefined": 0
+   },
+   "primary": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_undefined": 0,
+    "ci95": [
+     0.012231487419270397,
+     0.04953476583186172
+    ],
+    "cluster": "instance",
+    "delta_fgs": 0.028608262236929638,
+    "metric": "FGS_A - FGS_B",
+    "seed": 20261123
+   },
+   "problems_waived": [],
+   "secondary": {
+    "all_vacuous_instance_share": 0.02,
+    "by_repo": {
+     "astropy/astropy": {
+      "error_share": 0.0,
+      "fgs_a": 0.28,
+      "fgs_b": 0.28,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "django/django": {
+      "error_share": 0.0,
+      "fgs_a": 0.3161764705882353,
+      "fgs_b": 0.316,
+      "n_instances": 46,
+      "vacuous_share": 0.036231884057971016
+     },
+     "matplotlib/matplotlib": {
+      "error_share": 0.0,
+      "fgs_a": 0.34523809523809523,
+      "fgs_b": 0.3194444444444444,
+      "n_instances": 8,
+      "vacuous_share": 0.08333333333333333
+     },
+     "psf/requests": {
+      "error_share": 0.0,
+      "fgs_a": null,
+      "fgs_b": null,
+      "n_instances": 2,
+      "vacuous_share": 0.0
+     },
+     "pydata/xarray": {
+      "error_share": 0.0,
+      "fgs_a": 0.05555555555555555,
+      "fgs_b": 0.05555555555555555,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "pylint-dev/pylint": {
+      "error_share": 0.0,
+      "fgs_a": 0.4666666666666667,
+      "fgs_b": 0.4117647058823529,
+      "n_instances": 5,
+      "vacuous_share": 0.4666666666666667
+     },
+     "pytest-dev/pytest": {
+      "error_share": 0.0,
+      "fgs_a": 0.5,
+      "fgs_b": null,
+      "n_instances": 2,
+      "vacuous_share": 0.3333333333333333
+     },
+     "scikit-learn/scikit-learn": {
+      "error_share": 0.0,
+      "fgs_a": 0.325,
+      "fgs_b": 0.325,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "sphinx-doc/sphinx": {
+      "error_share": 0.0,
+      "fgs_a": 0.5,
+      "fgs_b": 1.0,
+      "n_instances": 8,
+      "vacuous_share": 0.5333333333333333
+     },
+     "sympy/sympy": {
+      "error_share": 0.0,
+      "fgs_a": 0.36666666666666664,
+      "fgs_b": 0.3583815028901734,
+      "n_instances": 14,
+      "vacuous_share": 0.047619047619047616
+     }
+    },
+    "decomposition": {
+     "error_ci95": [
+      0.0,
+      0.0
+     ],
+     "from_removing_error_on_unfixed": 0.0,
+     "from_removing_pass_on_unfixed": 0.028608262236929638,
+     "pass_ci95": [
+      0.012231487419270397,
+      0.04953476583186172
+     ]
+    },
+    "error_ci95": [
+     0.0,
+     0.0
+    ],
+    "error_share": 0.0,
+    "fail_unfixed_pass_gold_share": 0.4982456140350877,
+    "fpr": {
+     "failfirst": 0.25868725868725867,
+     "unfiltered": 0.3134502923976608
+    },
+    "fpr_ci95": {
+     "failfirst": [
+      0.19465625638453965,
+      0.3268733850129199
+     ],
+     "unfiltered": [
+      0.2474199091009866,
+      0.3817966903073286
+     ]
+    },
+    "kept_ci95": [
+     0.7709605155791955,
+     0.921904865199876
+    ],
+    "kept_resolved_green_share": 0.8531746031746031,
+    "no_failfirst_instance_share": 0.07,
+    "residual_ci95": [
+     0.19465625638453965,
+     0.3268733850129199
+    ],
+    "residual_false_green_rate": 0.25868725868725867,
+    "strict_ci95": [
+     -0.022940155529419276,
+     0.05583998221416541
+    ],
+    "strict_delta_fgs": 0.01381692573402421,
+    "tpr": {
+     "failfirst": 0.5534105534105535,
+     "unfiltered": 0.5894736842105263
+    },
+    "tpr_ci95": {
+     "failfirst": [
+      0.4592875318066158,
+      0.6475845112665564
+     ],
+     "unfiltered": [
+      0.5045351473922902,
+      0.6767728834739144
+     ]
+    },
+    "vacuous_share": 0.0912280701754386,
+    "vacuous_share_ci95": [
+     0.04912280701754386,
+     0.13978494623655913
+    ]
+   },
+   "unfixed_outcomes": {
+    "ERROR": 0,
+    "FAIL": 259,
+    "PASS": 26
+   },
+   "variant": "V2_drop",
+   "verdict": "AGAINST"
+  },
+  {
+   "arms": {
+    "failfirst": {
+     "fgs": 0.31626506024096385,
+     "n_checks": 271,
+     "n_green": 664,
+     "n_green_unresolved": 210
+    },
+    "unfiltered": {
+     "fgs": 0.34512195121951217,
+     "n_checks": 300,
+     "n_green": 820,
+     "n_green_unresolved": 283
+    }
+   },
+   "integrity_failures": [],
+   "missing_waived": false,
+   "n_checks": 300,
+   "n_missing_raw": 0,
+   "n_pairs": 1800,
+   "placebo": {
+    "ci95": [
+     0.013661277062208821,
+     0.023332629430190377
+    ],
+    "delta_mean": 0.018033763691083487,
+    "draws": 1000,
+    "p975": 0.023332629430190377,
+    "seed": 20261124,
+    "stratified_by": "instance",
+    "undefined": 0
+   },
+   "primary": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_undefined": 0,
+    "ci95": [
+     0.01293633952970074,
+     0.049135646930553056
+    ],
+    "cluster": "instance",
+    "delta_fgs": 0.028856890978548322,
+    "metric": "FGS_A - FGS_B",
+    "seed": 20261123
+   },
+   "problems_waived": [
+    "('astropy__astropy-13453#1', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-13453#2', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-13453#3', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-14369#1', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-14369#2', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-14369#3', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-10323#1', 'patch:20250623_warp'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-10323#2', 'patch:20250623_warp'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-10323#3', 'patch:20250623_warp'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-8721#1', 'patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-8721#2', 'patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-8721#3', 'patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-9281#1', 'patch:20241023_emergent'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-9281#2', 'patch:20241023_emergent'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-9281#3', 'patch:20241023_emergent'): attempt 3 exceeds the registered single retry"
+   ],
+   "secondary": {
+    "all_vacuous_instance_share": 0.03,
+    "by_repo": {
+     "astropy/astropy": {
+      "error_share": 0.0,
+      "fgs_a": 0.2826086956521739,
+      "fgs_b": 0.2826086956521739,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "django/django": {
+      "error_share": 0.0,
+      "fgs_a": 0.3161764705882353,
+      "fgs_b": 0.316,
+      "n_instances": 46,
+      "vacuous_share": 0.036231884057971016
+     },
+     "matplotlib/matplotlib": {
+      "error_share": 0.0,
+      "fgs_a": 0.34523809523809523,
+      "fgs_b": 0.3194444444444444,
+      "n_instances": 8,
+      "vacuous_share": 0.08333333333333333
+     },
+     "psf/requests": {
+      "error_share": 0.0,
+      "fgs_a": null,
+      "fgs_b": null,
+      "n_instances": 2,
+      "vacuous_share": 0.0
+     },
+     "pydata/xarray": {
+      "error_share": 0.0,
+      "fgs_a": 0.05555555555555555,
+      "fgs_b": 0.05555555555555555,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "pylint-dev/pylint": {
+      "error_share": 0.0,
+      "fgs_a": 0.4666666666666667,
+      "fgs_b": 0.4117647058823529,
+      "n_instances": 5,
+      "vacuous_share": 0.4666666666666667
+     },
+     "pytest-dev/pytest": {
+      "error_share": 0.0,
+      "fgs_a": 0.5,
+      "fgs_b": null,
+      "n_instances": 2,
+      "vacuous_share": 0.3333333333333333
+     },
+     "scikit-learn/scikit-learn": {
+      "error_share": 0.0,
+      "fgs_a": 0.325,
+      "fgs_b": 0.325,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "sphinx-doc/sphinx": {
+      "error_share": 0.0,
+      "fgs_a": 0.44,
+      "fgs_b": 0.3076923076923077,
+      "n_instances": 8,
+      "vacuous_share": 0.4583333333333333
+     },
+     "sympy/sympy": {
+      "error_share": 0.0,
+      "fgs_a": 0.36666666666666664,
+      "fgs_b": 0.3583815028901734,
+      "n_instances": 14,
+      "vacuous_share": 0.047619047619047616
+     }
+    },
+    "decomposition": {
+     "error_ci95": [
+      0.0,
+      0.0
+     ],
+     "from_removing_error_on_unfixed": 0.0,
+     "from_removing_pass_on_unfixed": 0.028856890978548322,
+     "pass_ci95": [
+      0.01293633952970074,
+      0.049135646930553056
+     ]
+    },
+    "error_ci95": [
+     0.0,
+     0.0
+    ],
+    "error_share": 0.0,
+    "fail_unfixed_pass_gold_share": 0.49666666666666665,
+    "fpr": {
+     "failfirst": 0.25830258302583026,
+     "unfiltered": 0.31444444444444447
+    },
+    "fpr_ci95": {
+     "failfirst": [
+      0.1962962962962963,
+      0.3232704402515723
+     ],
+     "unfiltered": [
+      0.25222222222222224,
+      0.38
+     ]
+    },
+    "kept_ci95": [
+     0.7643976703453991,
+     0.915292363139253
+    ],
+    "kept_resolved_green_share": 0.845437616387337,
+    "no_failfirst_instance_share": 0.03,
+    "residual_ci95": [
+     0.1962962962962963,
+     0.3232704402515723
+    ],
+    "residual_false_green_rate": 0.25830258302583026,
+    "strict_ci95": [
+     -0.022838499441470532,
+     0.05506807813394456
+    ],
+    "strict_delta_fgs": 0.0134892981582877,
+    "tpr": {
+     "failfirst": 0.5584255842558425,
+     "unfiltered": 0.5966666666666667
+    },
+    "tpr_ci95": {
+     "failfirst": [
+      0.46741819955793545,
+      0.6485531727379553
+     ],
+     "unfiltered": [
+      0.5155555555555555,
+      0.68
+     ]
+    },
+    "vacuous_share": 0.09666666666666666,
+    "vacuous_share_ci95": [
+     0.05333333333333334,
+     0.14666666666666667
+    ]
+   },
+   "unfixed_outcomes": {
+    "ERROR": 0,
+    "FAIL": 271,
+    "PASS": 29
+   },
+   "variant": "V3_all_green",
+   "verdict": "AGAINST"
+  },
+  {
+   "arms": {
+    "failfirst": {
+     "fgs": 0.3128834355828221,
+     "n_checks": 271,
+     "n_green": 652,
+     "n_green_unresolved": 204
+    },
+    "unfiltered": {
+     "fgs": 0.3403726708074534,
+     "n_checks": 300,
+     "n_green": 805,
+     "n_green_unresolved": 274
+    }
+   },
+   "integrity_failures": [],
+   "missing_waived": false,
+   "n_checks": 300,
+   "n_missing_raw": 0,
+   "n_pairs": 1800,
+   "placebo": {
+    "ci95": [
+     0.011801242236024856,
+     0.02172362528616123
+    ],
+    "delta_mean": 0.01631472568473932,
+    "draws": 1000,
+    "p975": 0.02172362528616123,
+    "seed": 20261124,
+    "stratified_by": "instance",
+    "undefined": 0
+   },
+   "primary": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_undefined": 0,
+    "ci95": [
+     0.0109613362356361,
+     0.0483004877454916
+    ],
+    "cluster": "instance",
+    "delta_fgs": 0.027489235224631314,
+    "metric": "FGS_A - FGS_B",
+    "seed": 20261123
+   },
+   "problems_waived": [
+    "('astropy__astropy-13453#1', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-13453#2', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-13453#3', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-14369#1', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-14369#2', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('astropy__astropy-14369#3', 'patch:20241022_tools_claude-3-5-sonnet-updated'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-10323#1', 'patch:20250623_warp'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-10323#2', 'patch:20250623_warp'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-10323#3', 'patch:20250623_warp'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-8721#1', 'patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-8721#2', 'patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-8721#3', 'patch:20250901_entroPO_R2E_QwenCoder30BA3B_tts'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-9281#1', 'patch:20241023_emergent'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-9281#2', 'patch:20241023_emergent'): attempt 3 exceeds the registered single retry",
+    "('sphinx-doc__sphinx-9281#3', 'patch:20241023_emergent'): attempt 3 exceeds the registered single retry"
+   ],
+   "secondary": {
+    "all_vacuous_instance_share": 0.03,
+    "by_repo": {
+     "astropy/astropy": {
+      "error_share": 0.0,
+      "fgs_a": 0.25,
+      "fgs_b": 0.25,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "django/django": {
+      "error_share": 0.0,
+      "fgs_a": 0.3161764705882353,
+      "fgs_b": 0.316,
+      "n_instances": 46,
+      "vacuous_share": 0.036231884057971016
+     },
+     "matplotlib/matplotlib": {
+      "error_share": 0.0,
+      "fgs_a": 0.34523809523809523,
+      "fgs_b": 0.3194444444444444,
+      "n_instances": 8,
+      "vacuous_share": 0.08333333333333333
+     },
+     "psf/requests": {
+      "error_share": 0.0,
+      "fgs_a": null,
+      "fgs_b": null,
+      "n_instances": 2,
+      "vacuous_share": 0.0
+     },
+     "pydata/xarray": {
+      "error_share": 0.0,
+      "fgs_a": 0.05555555555555555,
+      "fgs_b": 0.05555555555555555,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "pylint-dev/pylint": {
+      "error_share": 0.0,
+      "fgs_a": 0.4666666666666667,
+      "fgs_b": 0.4117647058823529,
+      "n_instances": 5,
+      "vacuous_share": 0.4666666666666667
+     },
+     "pytest-dev/pytest": {
+      "error_share": 0.0,
+      "fgs_a": 0.5,
+      "fgs_b": null,
+      "n_instances": 2,
+      "vacuous_share": 0.3333333333333333
+     },
+     "scikit-learn/scikit-learn": {
+      "error_share": 0.0,
+      "fgs_a": 0.325,
+      "fgs_b": 0.325,
+      "n_instances": 5,
+      "vacuous_share": 0.0
+     },
+     "sphinx-doc/sphinx": {
+      "error_share": 0.0,
+      "fgs_a": 0.4090909090909091,
+      "fgs_b": 0.14285714285714285,
+      "n_instances": 8,
+      "vacuous_share": 0.4583333333333333
+     },
+     "sympy/sympy": {
+      "error_share": 0.0,
+      "fgs_a": 0.36666666666666664,
+      "fgs_b": 0.3583815028901734,
+      "n_instances": 14,
+      "vacuous_share": 0.047619047619047616
+     }
+    },
+    "decomposition": {
+     "error_ci95": [
+      0.0,
+      0.0
+     ],
+     "from_removing_error_on_unfixed": 0.0,
+     "from_removing_pass_on_unfixed": 0.027489235224631314,
+     "pass_ci95": [
+      0.0109613362356361,
+      0.0483004877454916
+     ]
+    },
+    "error_ci95": [
+     0.0,
+     0.0
+    ],
+    "error_share": 0.0,
+    "fail_unfixed_pass_gold_share": 0.49666666666666665,
+    "fpr": {
+     "failfirst": 0.25092250922509224,
+     "unfiltered": 0.30444444444444446
+    },
+    "fpr_ci95": {
+     "failfirst": [
+      0.18872433407325193,
+      0.3167882280249301
+     ],
+     "unfiltered": [
+      0.2411111111111111,
+      0.37
+     ]
+    },
+    "kept_ci95": [
+     0.761506097952143,
+     0.9145637978094876
+    ],
+    "kept_resolved_green_share": 0.8436911487758946,
+    "no_failfirst_instance_share": 0.03,
+    "residual_ci95": [
+     0.18872433407325193,
+     0.3167882280249301
+    ],
+    "residual_false_green_rate": 0.25092250922509224,
+    "strict_ci95": [
+     -0.02444200868864856,
+     0.054561345127742765
+    ],
+    "strict_delta_fgs": 0.012167542602325221,
+    "tpr": {
+     "failfirst": 0.5510455104551045,
+     "unfiltered": 0.59
+    },
+    "tpr_ci95": {
+     "failfirst": [
+      0.46082239668775876,
+      0.6415777346592286
+     ],
+     "unfiltered": [
+      0.5088611111111111,
+      0.6733333333333333
+     ]
+    },
+    "vacuous_share": 0.09666666666666666,
+    "vacuous_share_ci95": [
+     0.05333333333333334,
+     0.14666666666666667
+    ]
+   },
+   "unfixed_outcomes": {
+    "ERROR": 0,
+    "FAIL": 271,
+    "PASS": 29
+   },
+   "variant": "V4_all_not_green",
+   "verdict": "AGAINST"
+  }
+ ],
+ "verdicts": {
+  "V1_d1": "AGAINST",
+  "V2_drop": "AGAINST",
+  "V3_all_green": "AGAINST",
+  "V4_all_not_green": "AGAINST"
+ }
+}

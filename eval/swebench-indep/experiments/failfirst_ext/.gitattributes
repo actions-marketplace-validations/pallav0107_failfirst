@@ -1,0 +1,9 @@
+*.py text eol=lf
+*.sh text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+# Frozen files are hashed byte-for-byte: never let git rewrite their line endings.
+# (Listed last so they override the patterns above.)
+PREREG.md -text
+prompt.txt -text
+PREREG.sha256 -text

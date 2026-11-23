@@ -1,0 +1,61 @@
+{
+ "arm_g_definition": "check FAILs on the unfixed code (both runs) and PASSes on the reference fix",
+ "bootstrap_seed": 20261123,
+ "ci95_instance_bootstrap": {
+  "delta_ag": [
+   0.01939287776162456,
+   0.05955254217265232
+  ],
+  "delta_bg": [
+   -0.0005681768276219608,
+   0.018812246772961075
+  ],
+  "fgs_g": [
+   0.256921647819063,
+   0.3498404954475242
+  ]
+ },
+ "counts": {
+  "a_g": 813,
+  "a_gr": 534,
+  "a_gu": 279,
+  "a_pr": 900,
+  "a_pu": 900,
+  "b_g": 657,
+  "b_gr": 451,
+  "b_gu": 206,
+  "b_pr": 813,
+  "b_pu": 813,
+  "g_g": 641,
+  "g_gr": 445,
+  "g_gu": 196,
+  "g_pr": 447,
+  "g_pu": 447,
+  "n_checks": 300,
+  "n_g": 149
+ },
+ "inputs": "deviation D1 variant V1 rows (results.jsonl + dev1_results.jsonl)",
+ "n_checks": 300,
+ "n_checks_g": 149,
+ "n_instances": 100,
+ "point": {
+  "delta_ag": 0.037401200845081806,
+  "delta_bg": 0.007774192246228662,
+  "fgs_a": 0.34317343173431736,
+  "fgs_b": 0.3135464231354642,
+  "fgs_g": 0.30577223088923555,
+  "fpr_a": 0.31,
+  "fpr_b": 0.25338253382533826,
+  "fpr_g": 0.43847874720357943,
+  "g_check_share": 0.49666666666666665,
+  "kept_resolved_g": 0.8333333333333334,
+  "tpr_a": 0.5933333333333334,
+  "tpr_b": 0.5547355473554736,
+  "tpr_g": 0.9955257270693513
+ },
+ "reproduced_v1": {
+  "fgs_a": 0.34317343173431736,
+  "fgs_b": 0.3135464231354642
+ },
+ "status": "EXPLORATORY, NOT PREREGISTERED; computed after all outcomes were known"
+}

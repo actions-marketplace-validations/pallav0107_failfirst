@@ -1,0 +1,26 @@
+You are writing an acceptance check for a bug report in an open-source Python project.
+
+Repository: {{REPO}}
+Version: {{VERSION}}
+
+The issue, exactly as reported:
+<issue>
+{{PROBLEM_STATEMENT}}
+</issue>
+
+Write ONE self-contained Python script that decides whether the behaviour described in the issue is correct.
+
+How the script will be run:
+- It is saved as check.py and run as `python check.py` with the repository root as the working directory.
+- The project and its dependencies are already installed in that Python environment; import the project the way its users would.
+- There is no network access. The script must not modify, create or delete files inside the repository.
+- It must finish within 120 seconds.
+
+What the script must do:
+- Exercise the behaviour the issue is about, as directly as possible.
+- Exit with status 0 if and only if the behaviour is correct, meaning the issue has been fixed.
+- Exit with a non-zero status if the behaviour is still wrong. Use `assert` statements for the decisive comparisons so that a wrong behaviour raises AssertionError.
+- If the project needs configuration before use (for example Django settings), configure a minimal in-memory setup inside the script itself.
+- Do not rely on the project's own test suite or test files, and do not call pytest.
+
+You cannot run code or see the repository. Reply with the script only, in a single ```python code block, with no explanation before or after it.

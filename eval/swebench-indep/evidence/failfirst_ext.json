@@ -1,0 +1,248 @@
+{
+ "arms": {
+  "failfirst": {
+   "fgs": 0.3185419968304279,
+   "n_checks": 259,
+   "n_green": 631,
+   "n_green_unresolved": 201,
+   "prompt_sha256": "cc91a604d59b6ab8d8e7c56dba38971ed2950b3ece04966ecf05970c184b6a72",
+   "run_manifest_sha256": "2c4bc84eea64e1fcaa6f7054f2509ac947db3c33f850675913e006c82fe20dcf"
+  },
+  "unfiltered": {
+   "fgs": 0.3471502590673575,
+   "n_checks": 285,
+   "n_green": 772,
+   "n_green_unresolved": 268,
+   "prompt_sha256": "cc91a604d59b6ab8d8e7c56dba38971ed2950b3ece04966ecf05970c184b6a72",
+   "run_manifest_sha256": "2c4bc84eea64e1fcaa6f7054f2509ac947db3c33f850675913e006c82fe20dcf"
+  }
+ },
+ "first_sampled_run_utc": "2026-11-22T14:31:32+00:00",
+ "generator": {
+  "endpoint_host": "token-plan.ap-southeast-1.maas.aliyuncs.com",
+  "model_requested": "qwen3.7-plus",
+  "n_generations": 301,
+  "n_regenerations": 1,
+  "params": {
+   "check_seeds": [
+    1,
+    2,
+    3
+   ],
+   "enable_thinking": false,
+   "max_regenerations": 2,
+   "max_tokens": 4096,
+   "temperature": 0.7,
+   "top_p": 0.8
+  },
+  "returned_models": [
+   "qwen3.7-plus"
+  ]
+ },
+ "integrity_failures": [
+  "15 expected verdicts missing after the registered retry"
+ ],
+ "n_checks": 285,
+ "n_exec_retries": 15,
+ "n_exec_rows": 2715,
+ "n_instances": 100,
+ "n_missing": 15,
+ "n_pairs": 1785,
+ "n_skipped": 18,
+ "n_walked": 118,
+ "oracle": {
+  "audit": {
+   "agree": 118,
+   "by_label": {
+    "resolved": {
+     "agree": 60,
+     "n": 60
+    },
+    "unresolved": {
+     "agree": 58,
+     "n": 60
+    }
+   },
+   "n": 120
+  },
+  "source": "SWE-bench/experiments results.json",
+  "source_commit": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d"
+ },
+ "placebo": {
+  "ci95": [
+   0.012826336333330801,
+   0.022786287068891846
+  ],
+  "delta_mean": 0.017385175087038615,
+  "draws": 1000,
+  "p975": 0.022786287068891846,
+  "seed": 20261124,
+  "stratified_by": "instance",
+  "undefined": 0
+ },
+ "prereg_n": 100,
+ "prereg_sha256": "56f2d4099b2dfa1fd71ead2f228e6705b018359e75cd7a49e51ca5161e1cac56",
+ "primary": {
+  "bootstrap_resamples": 10000,
+  "bootstrap_undefined": 0,
+  "ci95": [
+   0.012231487419270397,
+   0.04953476583186172
+  ],
+  "cluster": "instance",
+  "delta_fgs": 0.028608262236929638,
+  "metric": "FGS_A - FGS_B",
+  "seed": 20261123
+ },
+ "prompt_sha256": "cc91a604d59b6ab8d8e7c56dba38971ed2950b3ece04966ecf05970c184b6a72",
+ "sample_lock_sha256": "887624de6dc7c9b54a88f4a6cd8d94b0fb29dbcfa4ed63c3ec8b5c8af8c824f1",
+ "secondary": {
+  "all_vacuous_instance_share": 0.02,
+  "by_repo": {
+   "astropy/astropy": {
+    "error_share": 0.0,
+    "fgs_a": 0.28,
+    "fgs_b": 0.28,
+    "n_instances": 5,
+    "vacuous_share": 0.0
+   },
+   "django/django": {
+    "error_share": 0.0,
+    "fgs_a": 0.3161764705882353,
+    "fgs_b": 0.316,
+    "n_instances": 46,
+    "vacuous_share": 0.036231884057971016
+   },
+   "matplotlib/matplotlib": {
+    "error_share": 0.0,
+    "fgs_a": 0.34523809523809523,
+    "fgs_b": 0.3194444444444444,
+    "n_instances": 8,
+    "vacuous_share": 0.08333333333333333
+   },
+   "psf/requests": {
+    "error_share": 0.0,
+    "fgs_a": null,
+    "fgs_b": null,
+    "n_instances": 2,
+    "vacuous_share": 0.0
+   },
+   "pydata/xarray": {
+    "error_share": 0.0,
+    "fgs_a": 0.05555555555555555,
+    "fgs_b": 0.05555555555555555,
+    "n_instances": 5,
+    "vacuous_share": 0.0
+   },
+   "pylint-dev/pylint": {
+    "error_share": 0.0,
+    "fgs_a": 0.4666666666666667,
+    "fgs_b": 0.4117647058823529,
+    "n_instances": 5,
+    "vacuous_share": 0.4666666666666667
+   },
+   "pytest-dev/pytest": {
+    "error_share": 0.0,
+    "fgs_a": 0.5,
+    "fgs_b": null,
+    "n_instances": 2,
+    "vacuous_share": 0.3333333333333333
+   },
+   "scikit-learn/scikit-learn": {
+    "error_share": 0.0,
+    "fgs_a": 0.325,
+    "fgs_b": 0.325,
+    "n_instances": 5,
+    "vacuous_share": 0.0
+   },
+   "sphinx-doc/sphinx": {
+    "error_share": 0.0,
+    "fgs_a": 0.5,
+    "fgs_b": 1.0,
+    "n_instances": 8,
+    "vacuous_share": 0.5333333333333333
+   },
+   "sympy/sympy": {
+    "error_share": 0.0,
+    "fgs_a": 0.36666666666666664,
+    "fgs_b": 0.3583815028901734,
+    "n_instances": 14,
+    "vacuous_share": 0.047619047619047616
+   }
+  },
+  "decomposition": {
+   "error_ci95": [
+    0.0,
+    0.0
+   ],
+   "from_removing_error_on_unfixed": 0.0,
+   "from_removing_pass_on_unfixed": 0.028608262236929638,
+   "pass_ci95": [
+    0.012231487419270397,
+    0.04953476583186172
+   ]
+  },
+  "error_ci95": [
+   0.0,
+   0.0
+  ],
+  "error_share": 0.0,
+  "fail_unfixed_pass_gold_share": 0.4982456140350877,
+  "fpr": {
+   "failfirst": 0.25868725868725867,
+   "unfiltered": 0.3134502923976608
+  },
+  "fpr_ci95": {
+   "failfirst": [
+    0.19465625638453965,
+    0.3268733850129199
+   ],
+   "unfiltered": [
+    0.2474199091009866,
+    0.3817966903073286
+   ]
+  },
+  "kept_ci95": [
+   0.7709605155791955,
+   0.921904865199876
+  ],
+  "kept_resolved_green_share": 0.8531746031746031,
+  "no_failfirst_instance_share": 0.07,
+  "residual_ci95": [
+   0.19465625638453965,
+   0.3268733850129199
+  ],
+  "residual_false_green_rate": 0.25868725868725867,
+  "strict_ci95": [
+   -0.022940155529419276,
+   0.05583998221416541
+  ],
+  "strict_delta_fgs": 0.01381692573402421,
+  "tpr": {
+   "failfirst": 0.5534105534105535,
+   "unfiltered": 0.5894736842105263
+  },
+  "tpr_ci95": {
+   "failfirst": [
+    0.4592875318066158,
+    0.6475845112665564
+   ],
+   "unfiltered": [
+    0.5045351473922902,
+    0.6767728834739144
+   ]
+  },
+  "vacuous_share": 0.0912280701754386,
+  "vacuous_share_ci95": [
+   0.04912280701754386,
+   0.13978494623655913
+  ]
+ },
+ "task_id": "failfirst-swebench-indep",
+ "unfixed_outcomes": {
+  "ERROR": 0,
+  "FAIL": 259,
+  "PASS": 26
+ },
+ "verdict": "BLOCKED"
+}
