@@ -1,5 +1,7 @@
 # failfirst
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24486276.svg)](https://doi.org/10.5281/zenodo.24486276)
+
 > A check that has never failed carries no information.
 
 `failfirst` makes acceptance criteria prove themselves. A criterion only counts as passing after a change if it was first **shown to fail on the unfixed code**, and has not been edited since.
@@ -75,6 +77,10 @@ Built for agents to call without help: [`llms.txt`](llms.txt) and [`AGENTS.md`](
 * Not a sandbox or a security boundary: criteria are commands and run with your privileges. An agent that can edit both the code and the criteria file is only caught on the criteria it edits; protect the lockfile and criteria file (commit the lock before the work, review criteria changes) if your agent is untrusted.
 * Not proof the fix is *right*, only that the criteria were capable of failing and now pass. Bad criteria that fail for the wrong reason still prove nothing about the right one; the `judgment` type exists for what a command cannot decide.
 * Not mutation testing. It proves a criterion failed once, on the state you pointed it at.
+
+## Citing
+
+failfirst 0.1.2, including the SWE-bench Verified test in `eval/swebench-indep/`, is archived on Zenodo: [doi:10.5281/zenodo.24486276](https://doi.org/10.5281/zenodo.24486276).
 
 ## License
 
