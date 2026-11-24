@@ -1,0 +1,6 @@
+name: failfirst
+version: "0.1.0"
+description: "Fail-first acceptance gates for /goal: criteria must fail on the unfixed code before they may pass"
+provides_hooks:
+  - pre_tool_call
+  - pre_verify

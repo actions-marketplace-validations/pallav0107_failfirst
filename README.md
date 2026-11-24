@@ -71,6 +71,10 @@ Built for agents to call without help: [`llms.txt`](llms.txt) and [`AGENTS.md`](
 * `eval/run_agent_eval.py` is the agent task eval (scripted tasks in `eval/agent_tasks/`; needs an OpenAI-compatible endpoint).
 * [`eval/swebench-indep/`](eval/swebench-indep/) is the preregistered test of fail-first on SWE-bench Verified (plan hash in [`prereg/`](prereg/)): plan, deviation, model-written checks, run data and analysis. Under the registered rule it is BLOCKED; under deviation D1, fail-first removed vacuous checks, but checks that failed first still accepted 25% of runs on wrong patches.
 
+## Hermes Agent
+
+[`adapters/hermes/`](adapters/hermes/) is a plugin for [Hermes Agent](https://github.com/NousResearch/hermes-agent). `/failfirst baseline` records the criteria failing on the unfixed code and prints a `/goal gate add` line, so a Hermes `/goal` cannot finish until those criteria pass. A `pre_tool_call` hook stops the agent editing the criteria or the lockfile, or re-running the baseline, while the goal runs.
+
 ## What it is not
 
 * Not a test framework. It runs whatever commands you give it and judges exit codes and text.
