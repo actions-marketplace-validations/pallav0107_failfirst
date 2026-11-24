@@ -1,5 +1,5 @@
 """failfirst: a check that has never failed carries no information."""
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 from .core import LockError, baseline, format_report, verify  # noqa: E402
 from .model import SpecError, criterion_hash, load_criteria, normalize_criteria  # noqa: E402

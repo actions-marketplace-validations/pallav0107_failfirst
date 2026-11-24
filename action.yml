@@ -1,4 +1,4 @@
-name: failfirst
+name: failfirst acceptance gate
 description: Verify that acceptance criteria were proven to fail before the change and pass after it.
 author: Pallav Pokhriyal
 inputs:
@@ -18,3 +18,6 @@ runs:
       shell: bash
     - run: failfirst verify "${{ inputs.criteria }}" --lock "${{ inputs.lock }}" --report failfirst-report.json
       shell: bash
+branding:
+  icon: check-circle
+  color: blue

@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./ # or pallav0107/failfirst@v0.1.1
+      - uses: ./ # or pallav0107/failfirst@v0.1.2
         with:
           criteria: failfirst.yaml

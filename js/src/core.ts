@@ -3,7 +3,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { criterionHash, SPEC_VERSION, type Criterion } from "./model.js";
 import { evaluate, observe as defaultObserve, type Evaluation, type Observation } from "./runner.js";
 
-export const VERSION = "0.1.1";
+export const VERSION = "0.1.2";
 export const EXIT_OK = 0, EXIT_FAIL = 1, EXIT_USAGE = 2, EXIT_REVIEW = 3;
 export const DEFAULT_LOCK = ".failfirst.lock.json";
 

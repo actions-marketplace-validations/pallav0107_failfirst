@@ -2,7 +2,7 @@
   "description": "Expected output of `failfirst describe --json`; every implementation must match it exactly.",
   "expected": {
     "tool": "failfirst",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "anthropic": [
       {
         "name": "failfirst_baseline",

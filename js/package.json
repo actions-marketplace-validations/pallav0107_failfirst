@@ -1,6 +1,6 @@
 {
   "name": "@pallav0107/failfirst",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Acceptance criteria that must be proven to fail on the unfixed code before they may count as passing.",
   "type": "module",
   "main": "dist/index.js",
