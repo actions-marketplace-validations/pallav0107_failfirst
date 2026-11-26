@@ -75,6 +75,10 @@ Built for agents to call without help: [`llms.txt`](llms.txt) and [`AGENTS.md`](
 
 [`adapters/hermes/`](adapters/hermes/) is a plugin for [Hermes Agent](https://github.com/NousResearch/hermes-agent). `/failfirst baseline` records the criteria failing on the unfixed code and prints a `/goal gate add` line, so a Hermes `/goal` cannot finish until those criteria pass. A `pre_tool_call` hook stops the agent editing the criteria or the lockfile, or re-running the baseline, while the goal runs.
 
+## Grok Build
+
+[`adapters/grok-build/`](adapters/grok-build/) is a hook-and-runner adapter for xAI's Grok Build terminal agent. `failfirst_grok.py baseline` records the criteria failing on the unfixed code; a Stop hook keeps the agent working until they pass, a PreToolUse hook stops it editing the criteria or the lockfile, and `failfirst_grok.py run -- "<task>"` retries headless `grok` and ends on a final `failfirst verify`.
+
 ## What it is not
 
 * Not a test framework. It runs whatever commands you give it and judges exit codes and text.
